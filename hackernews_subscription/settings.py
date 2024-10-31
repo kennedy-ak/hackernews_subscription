@@ -86,8 +86,11 @@ WSGI_APPLICATION = "hackernews_subscription.wsgi.application"
 
 import dj_database_url
 
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a.ohio-postgres.render.com/hacker_db')
+# }
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a.ohio-postgres.render.com/hacker_db')
+    'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a/hacker_db')
 }
 
 
