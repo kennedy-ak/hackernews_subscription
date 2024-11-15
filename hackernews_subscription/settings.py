@@ -75,12 +75,12 @@ WSGI_APPLICATION = "hackernews_subscription.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 # settings.py
 
@@ -89,9 +89,9 @@ import dj_database_url
 # DATABASES = {
 #     'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a.ohio-postgres.render.com/hacker_db')
 # }
-DATABASES = {
-    'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a/hacker_db')
-}
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://hacker_db_user:lUqJJwDA2PE4vWRP4dRuwj51pzxqxjUH@dpg-csi152ggph6c73849qig-a/hacker_db')
+# }
 
 
 # Password validation
@@ -176,5 +176,6 @@ EMAIL_HOST_PASSWORD = 'fsjvbeaseumsruzm'  # Use the App Password here
 # settings.py
 
 # Redis URL for Celery
-CELERY_BROKER_URL = 'redis://red-csi13ql6l47c73ev32ng:6379'
+# CELERY_BROKER_URL = 'redis://red-csi13ql6l47c73ev32ng:6379'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
 

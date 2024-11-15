@@ -1,20 +1,109 @@
-<!-- templates/subscriptions/subscribe.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribe to Hacker News Updates</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Heading */
+        h2 {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Introduction text */
+        .intro {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Input field styling */
+        input[type="email"] {
+            padding: 0.75rem;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 100%;
+        }
+
+        /* Submit button */
+        button {
+            padding: 0.75rem;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Success/error messages */
+        .message {
+            font-size: 14px;
+            color: #4CAF50;
+            margin-top: 1rem;
+        }
+
+        .error {
+            color: #f44336;
+        }
+    </style>
 </head>
 <body>
-    <h2>Subscribe to Hacker News Top Article</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Subscribe</button>
-    </form>
-    {% for message in messages %}
-        <p>{{ message }}</p>
-    {% endfor %}
+    <div class="container">
+        <h2>Subscribe to Hacker News Top Articles</h2>
+        <p class="intro">Get the latest top article from Hacker News delivered to your inbox daily. Stay updated with trending tech news and insights!</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Subscribe</button>
+        </form>
+        
+        {% for message in messages %}
+            <p class="message">{{ message }}</p>
+        {% endfor %}
+    </div>
 </body>
 </html>
