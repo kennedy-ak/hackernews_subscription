@@ -45,6 +45,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -163,6 +164,7 @@ EMAIL_USE_TLS = False  # Only use one: SSL or TLS
 EMAIL_HOST_USER = 'kennedyakogokweku@gmail.com'
 EMAIL_HOST_PASSWORD = 'fsjvbeaseumsruzm'  # Use the App Password here
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
@@ -170,7 +172,7 @@ EMAIL_HOST_PASSWORD = 'fsjvbeaseumsruzm'  # Use the App Password here
 # EMAIL_USE_TLS = True  # Enables STARTTLS
 # EMAIL_HOST_USER = '65de48911882dc'
 # EMAIL_HOST_PASSWORD = '66cfc0652127ed' 
-
+import os
 
 # settings.py
 # settings.py
@@ -178,4 +180,4 @@ EMAIL_HOST_PASSWORD = 'fsjvbeaseumsruzm'  # Use the App Password here
 # Redis URL for Celery
 # CELERY_BROKER_URL = 'redis://red-csi13ql6l47c73ev32ng:6379'
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

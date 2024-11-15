@@ -15,6 +15,6 @@ from celery.schedules import crontab
 app.conf.beat_schedule = {
     'send_top_article_every_day': {
         'task': 'subscriptions.tasks.send_daily_top_article',
-        'schedule': crontab(hour=20, minute=28),  # Runs daily at 9 AM
+        'schedule': crontab(hour=21, minute=7),  # Runs daily at 9 AM
     },
 }
